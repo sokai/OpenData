@@ -1,0 +1,78 @@
+{
+    "id": "http://oparl.org/schema/1.0/#",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "schema for OParl v0.1",
+    "required": [
+        "system"
+    ],
+	"type": "object",
+	"properties": {
+        "system": {
+            "id": "http://oparl.org/schema/1.0/System",
+            "description": "Der Objekttyp oparl:System bildet grundlegende Informationen zum parlamentarischen Informationssystem ab. Das Objekt repräsentiert das technische System, unabhängig von der Frage, welche Körperschaften auf diesem System vertreten sind.",
+            "type": "object",
+            "required": [
+                "oparlVersion",
+                "body"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "https://oparl.example.org/"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "http://oparl.org/schema/1.0/System"
+                },
+                "oparlVersion": {
+                    "type": "string",
+                    "description": "Die URL der OParl-Spezifikation, die von diesem Server unterstützt wird. Aktuell kommt hier nur ein Wert in Frage. Mit zukünftigen OParl-Versionen kommen weitere mögliche URLs hinzu. Bsp: http://oparl.org/specs/1.0/"
+                },
+                "body": {
+                    "type": "array",
+                    "description": "Liste der Körperschaften (oparl:Body-Objekte), die auf dem System existieren.",
+                    "items": {
+                        "type": "string",
+                        "description": "https://oparl.example.org/body/0"
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Nutzerfreundlicher Name für das System, mit dessen Hilfe Nutzerinnen und Nutzer das System erkennen und von anderen unterscheiden können. Bsp.: Beispiel-System"
+                },
+                "contactEmail": {
+                    "type": "string",
+                    "description": "E-Mail-Adresse für Anfragen zur OParl-API. Die Angabe einer E-Mail-Adresse dient sowohl NutzerInnen wie auch Entwicklerinnen von Clients zur Kontaktaufnahme mit dem Betreiber. Bsp.: mailto:info@example.org"
+                },
+                "contactName": {
+                    "type": "string",
+                    "description": "Name der Ansprechpartnerin bzw. des Ansprechpartners oder der Abteilung, die über die in contactEmail angegebene Adresse erreicht werden kann. Bsp.: Allgemeiner OParl Kontakt"
+                },
+                "newObjects": {
+                    "type": "string",
+                    "description": "URL des Feeds \"Neue Objekte\". Bsp: https://oparl.example.org/new_objects/"
+                },
+                "updatedObjects": {
+                    "type": "string",
+                    "description": "URL des Feeds \"Geänderte Objekte\". Bsp.: https://oparl.example.org/updated_objects/"
+                },
+                "removedObjects": {
+                    "type": "string",
+                    "description": "URL des Feeds \"Entfernte Objekte\". Bsp.: https://oparl.example.org/removed_objects"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "URL der Website des parlamentarischen Informationssystems. Bsp.: http://www.example.org/"
+                },
+                "vendor": {
+                    "type": "string",
+                    "description": "URL der Website des Software-Anbieters, von dem die OParl-Server-Software stammt. Bsp.: http://example-software.com/"
+                },
+                "product": {
+                    "type": "string",
+                    "description": "URL zu Informationen über die auf dem System genutzte OParl-Server-Software. Bsp.: http://example-software.com/oparl-server/"
+                }
+            }
+        }
+    }
+}
