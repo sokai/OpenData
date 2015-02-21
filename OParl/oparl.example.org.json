@@ -1,0 +1,267 @@
+{
+    "__coment": "original dataset from https://raw.githubusercontent.com/OParl/specs/master/dokument/plain/document.txt",
+    "__comment": "dataset cleanup: resources = singular",
+    "id": "https://oparl.example.org/",
+    "type": "http://oparl.org/schema/1.0/System",
+    "oparlVersion": "http://oparl.org/specs/1.0/",
+    "body": "https://oparl.example.org/bodies/",
+    "name": "Beispiel-System",
+    "contactEmail": "mailto:info@example.org",
+    "contactName": "Allgemeiner OParl Kontakt",
+    "newObjects": "https://oparl.example.org/new_objects/",
+    "updatedObjects": "https://oparl.example.org/updated_objects/",
+    "removedObjects": "https://oparl.example.org/removed_objects",
+    "website": "http://www.example.org/",
+    "vendor": "http://example-software.com/",
+    "product": "http://example-software.com/oparl-server/",
+    "bodies": [
+        {
+            "id": "https://oparl.example.org/body/0",
+            "type": "http://oparl.org/schema/1.0/Body",
+            "system": "https://oparl.example.org/",
+            "contactEmail": "mailto:ris@beispielstadt.de",
+            "contactName": "RIS-Betreuung",
+            "rgs": "053150000000",
+            "equivalentBody": [
+                "http://d-nb.info/gnd/2015732-0",
+                "http://dbpedia.org/resource/Cologne"
+            ],
+            "shortName": "Köln",
+            "name": "Stadt Köln, kreisfreie Stadt",
+            "website": "http://www.beispielstadt.de/",
+            "license": "http://creativecommons.org/licenses/by/4.0/",
+            "licenseValidSince": "2014-01-01",
+            "organization": "https://oparl.example.org/body/0/organizations/",
+            "meeting": "https://oparl.example.org/body/0/meetings/",
+            "paper": "https://oparl.example.org/body/0/papers/",
+            "member": "https://oparl.example.org/body/0/people/",
+            "legislativeTerm": [
+                "https://oparl.example.org/body/0/terms/1",
+                "https://oparl.example.org/body/0/terms/2"
+            ],
+            "classification": "Kreisfreie Stadt",
+            "created": "2014-01-08T14:28:31.568+0100",
+            "modified": "2014-01-08T14:28:31.568+0100"
+        }
+    ],
+    "organizations": [
+        {
+            "id": "https://oparl.example.org/organization/34",
+            "type": "http://oparl.org/schema/1.0/Organization",
+            "body": "https://oparl.example.org/bodies/1",
+            "name": "Ausschuss für Haushalt und Finanzen",
+            "shortName": "Finanzausschuss",
+            "post": [
+                "Vorsitzender | Vorsitzende",
+                "1. Stellvertreter | 1. Stellvertreterin",
+                "Mitglied"
+            ],
+            "meeting": "https://oparl.example.org/meetings_for_org/34",
+            "membership": [
+                "https://oparl.example.org/memberships/27",
+                "https://oparl.example.org/memberships/48",
+                "https://oparl.example.org/memberships/57"
+            ],
+            "classification": "Ausschuss",
+            "keyword": [
+                "finanzen",
+                "haushalt"
+            ],
+            "created": "2012-07-16T16:01:44+02:00",
+            "startDate": "2012-07-17T00:00:00+02:00",
+            "modified": "2012-08-16T14:05:27+02:00"
+        },
+        {
+            "id": "https://oparl.example.org/organization/34",
+            "type": "http://oparl.org/schema/1.0/Organization",
+            "body": "https://oparl.example.org/bodies/1",
+            "name": "Ausschuss für Haushalt und Finanzen",
+            "meeting": "https://oparl.example.org/meetings_for_org/34",
+            "membership": "https://oparl.example.org/meetings_for_org/34",
+            "modified": "2012-08-16T14:05:27+02:00"
+        }
+    ],
+    "persons": [
+        {
+            "id": "https://oparl.example.org/person/29",
+            "type": "http://oparl.org/schema/1.0/Person",
+            "body": "https://oparl.example.org/body/0",
+            "name": "Prof. Dr. Max Mustermann",
+            "familyName": "Mustermann",
+            "givenName": "Max",
+            "title": [
+                "Prof.",
+                "Dr."
+            ],
+            "formOfAddress": "Ratsherr | Ratsfrau",
+            "gender": "male",
+            "email": "mailto:max@mustermann.de",
+            "phone": "tel:+493012345678",
+            "streetAddress": "Musterstraße 5",
+            "postalCode": "11111",
+            "locality": "Musterort",
+            "status": "Bezirksbürgermeister | Bezirksbürgermeisterin",
+            "membership": [
+                "https://oparl.example.org/membership/11",
+                "https://oparl.example.org/membership/34"
+            ],
+            "created": "2011-11-11T11:11:00+01:00",
+            "modified": "2012-08-16T14:05:27+02:00"
+        }
+    ],
+    "meetings": [
+        {
+            "id": "https://oparl.example.org/meeting/281",
+            "type": "http://oparl.org/schema/1.0/Meeting",
+            "name": "4. Sitzung des Finanzausschusses",
+            "start": "2013-01-04T08:00:00+01:00",
+            "end": "2013-01-04T12:00:00+01:00",
+            "streetAddress": "Musterstraße 5, Raum 136",
+            "postalCode": "11111",
+            "locality": "Musterort",
+            "organization": [
+                "https://oparl.example.org/organization/34"
+            ],
+            "invitation": [
+                "https://oparl.example.org/files/586"
+            ],
+            "resultsProtocol": "https://oparl.example.org/files/628",
+            "verbatimProtocol": "https://oparl.example.org/files/691",
+            "auxiliaryFile": [
+                "https://oparl.example.org/files/588",
+                "https://oparl.example.org/files/589"
+            ],
+            "agendaItem": [
+                "https://oparl.example.org/agendaitem/1045",
+                "https://oparl.example.org/agendaitem/1046",
+                "https://oparl.example.org/agendaitem/1047",
+                "https://oparl.example.org/agendaitem/1048"
+            ],
+            "created": "2012-01-06T12:01:00+01:00",
+            "modified": "2012-01-08T14:05:27+01:00"
+        }
+    ],
+    "agendaitems": [
+        {
+            "id": "https://oparl.example.org/agendaitem/3271",
+            "type": "http://oparl.org/schema/1.0/AgendaItem",
+            "meeting": "https://oparl.example.org/meeting/281",
+            "number": "10.1",
+            "name": "Satzungsänderung für Ausschreibungen",
+            "public": true,
+            "consultation": "https://oparl.example.org/consultation/1034",
+            "result": "Geändert beschlossen",
+            "resolution": "Der Beschluss weicht wie folgt vom Antrag ab: ...",
+            "modified": "2012-08-16T14:05:27+02:00"
+        }
+    ],
+    "papers": [
+        {
+            "id": "https://oparl.example.org/paper/749",
+            "type": "http://oparl.org/schema/1.0/Paper",
+            "body": "https://oparl.example.org/bodies/1",
+            "name": "Antwort auf Anfrage 1200/2014",
+            "reference": "1234/2014",
+            "publishedDate": "2014-04-04T16:42:02+02:00",
+            "paperType": "Beantwortung einer Anfrage",
+            "relatedPaper": [
+                "https://oparl.example.org/paper/699"
+            ],
+            "mainFile": "https://oparl.example.org/files/925",
+            "auxiliaryFile": [
+                "https://oparl.example.org/files/926"
+            ],
+            "location": [
+                "https://oparl.example.org/locations/4472"
+            ],
+            "originator": [
+                "https://oparl.example.org/organization/2000",
+                "https://oparl.example.org/people/1000"
+            ],
+            "consultation": [
+                "https://oparl.example.org/consultation/5676",
+                "https://oparl.example.org/consultation/5689"
+            ],
+            "underDirectionOf": [
+                "https://oparl.example.org/organization/2000"
+            ],
+            "modified": "2013-01-08T12:05:27+01:00"
+        }
+    ],
+    "files": [
+        {
+            "id": "https://oparl.example.org/file/57739",
+            "type": "http://oparl.org/schema/1.0/File",
+            "name": "Anlage 1 zur Anfrage",
+            "fileName": "57739.pdf",
+            "paper": [
+                "https://oparl.example.org/paper/2396"
+            ],
+            "mimeType": "application/pdf",
+            "date": "2013-01-04T07:54:13+01:00",
+            "modified": "2013-01-04T07:54:13+01:00",
+            "sha1Checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "size": 82930,
+            "accessUrl": "https://oparl.example.org/files/57739.pdf",
+            "downloadUrl": "https://oparl.example.org/files/download/57739.pdf",
+            "text": "Der Übersichtsplan zeigt alle Ebenen des ...",
+            "masterFile": "https://oparl.example.org/files/57738",
+            "license": "http://www.opendefinition.org/licenses/cc-by"
+        }
+    ],
+    "consultations": [
+        {
+            "id": "https://oparl.example.org/consultation/47594",
+            "type": "http://oparl.org/schema/1.0/Consultation",
+            "paper": "https://oparl.example.org/paper/2396",
+            "agendaItem": "https://oparl.example.org/agendaitem/15569",
+            "organization": "https://oparl.example.org/organization/96",
+            "authoritative": false,
+            "role": "Beschlussfassung"
+        }
+    ],
+    "locations": [
+        {
+            "id": "https://oparl.example.org/location/29856",
+            "type": "http://oparl.org/schema/1.0/Location",
+            "description": "Honschaftsstraße 312, Köln",
+            "geometry": "POINT (7.03291 50.98249)"
+        },
+        {
+            "id": "https://oparl.example.org/location/29856",
+            "type": "http://oparl.org/schema/1.0/Location",
+            "description": "Rechtes Rheinufer zwischen Deutzer Brücke und Hohenzollernbrücke",
+            "geometry": "POLYGON ((6.9681106 50.9412137, 6.9690940 50.9412137, 6.9692169 50.9368270, 6.9681218 50.9368270, 6.9681106 50.9412137))"
+        }
+    ],
+    "memberships": [
+        {
+            "id": "https://oparl.example.org/membership/385",
+            "type": "http://oparl.org/schema/1.0/Membership",
+            "person": "https://oparl.example.org/people/862",
+            "organization": "https://oparl.example.org/organizations/5",
+            "role": "Vorsitzender | Vorsitzende",
+            "votingRight": true,
+            "startDate": "2013-12-03T16:30:00+01:00"
+        },
+        {
+            "id": "https://oparl.example.org/membership/693",
+            "person": "https://oparl.example.org/people/284",
+            "organization": "https://oparl.example.org/organizations/9",
+            "role": "Sachkundiger Bürger | Sachkundige Bürgerin",
+            "votingRight": false,
+            "startDate": "2013-12-03T16:30:00+01:00",
+            "endDate": "2014-07-28T00:00:00+02:00"
+        }
+    ],
+    "terms": [
+        {
+            "id": "https://oparl.example.org/term/21",
+            "type": "http://oparl.org/schema/1.0/LegislativeTerm",
+            "body": "https://oparl.example.org/body/0",
+            "name": "21. Wahlperiode",
+            "startDate": "2010-12-03",
+            "endDate":  "2013-12-03"
+        }
+    ]
+}
