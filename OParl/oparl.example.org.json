@@ -43,8 +43,8 @@
                 "https://oparl.example.org/body/0/terms/2"
             ],
             "classification": "Kreisfreie Stadt",
-            "created": "2014-01-08T14:28:31.568+0100",
-            "modified": "2014-01-08T14:28:31.568+0100"
+            "created": "2014-01-08T14:28:31.568+01:00",
+            "modified": "2014-01-08T14:28:31.568+01:00"
         }
     ],
     "organizations": [
