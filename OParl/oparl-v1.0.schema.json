@@ -12,6 +12,8 @@
             "id": "http://oparl.org/schema/1.0/System",
             "description": "Der Objekttyp oparl:System bildet grundlegende Informationen zum parlamentarischen Informationssystem ab. Das Objekt repräsentiert das technische System, unabhängig von der Frage, welche Körperschaften auf diesem System vertreten sind.",
             "required": [
+                "id",
+                "typ",
                 "oparlVersion",
                 "body"
             ],
@@ -38,7 +40,7 @@
                 "type": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^http://oparl\\.org/schema/1\\.0/System$"
+                    "pattern": "^http://oparl\\.org/schema/1\\.0/System$",
                     "description": "Bsp.: http://oparl.org/schema/1.0/System"
                 },
                 "oparlVersion": {
@@ -107,6 +109,8 @@
             "description": "Der Objekttyp oparl:Body dient dazu, eine Körperschaft und damit ein Parlament zu repräsentieren, zu dem der Server Informationen bereithält. Eine Körperschaft kann beispielsweise eine Gemeinde, ein Landkreis oder ein kommunaler Zweckverband sein.",
             "type": "object",
             "required": [
+                "id",
+                "type",
                 "system",
                 "name",
                 "paper",
@@ -161,48 +165,74 @@
                 },
                 "contactEmail": {
                     "type": "string",
-                    "description": "URL der Website des parlamentarischen Informationssystems. Bsp.: mailto:ris@beispielstadt.de"
+                    "format": "email",
+                    "pattern": "^mailto:.+$",
+                    "description": "Dient der Angabe einer Kontakt-E-Mail-Adresse mit \"mailto:\"-Schema. Die Adresse soll die Kontaktaufnahme zu einer für die Körperschaft und idealerweise das parlamentarische Informationssystem zuständigen Stelle ermöglichen. Typ: String im Format foaf:mbox. Kardinalität: 0 bis 1. Bsp.: mailto:ris@beispielstadt.de"
                 },
                 "contactName": {
                     "type": "string",
-                    "description": "URL der Website des Software-Anbieters, von dem die OParl-Server-Software stammt. Bsp.: RIS-Betreuung"
+                    "description": "Name oder Bezeichnung der mit contactEmail erreichbaren Stelle. Typ: String. Kardinalität: 0 bis 1. Bsp.: RIS-Betreuung"
                 },
-                "paper": {
-                    "type": "string",
-                    "description": "URL zu Informationen über die auf dem System genutzte OParl-Server-Software. Bsp.: https://oparl.example.org/body/0/papers/"
+                "papers": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "minItems": 1,
+                    "description": "Drucksachen unter dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Paper Objekten. Kardinalität: 0 bis *."
                 },
-                "member": {
-                    "type": "string",
-                    "description": "Personen in dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Person Objekten. Kardinalität: 0 bis *. Bsp.: https://oparl.example.org/body/0/people/"
-                }
-                "meeting": {
-                    "type": "string",
-                    "description": "Sitzungen dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Meeting Objekten. Kardinalität: 0 bis *. Bsp.: https://oparl.example.org/body/0/meetings/"
-                }
-                "organization": {
-                    "type": "string",
-                    "description": "Gruppierungen in dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Organization Objekten. Kardinalität: 0 bis *. Bsp.: https://oparl.example.org/body/0/organizations/"
-                }
-                "legislativeTerm": {
-                    "type": "array",
+                "members": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "minItems": 1,
+                    "description": "Personen in dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Person Objekten. Kardinalität: 0 bis *."
+                },
+                "meetings": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "minItems": 1,
+                    "description": "Sitzungen dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Meeting Objekten. Kardinalität: 0 bis *."
+                },
+                "organizations": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "minItems": 1,
+                    "description": "Gruppierungen in dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:Organization Objekten. Kardinalität: 0 bis *."
+                },
+                "legislativeTerms": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "minItems": 1,
                     "description": "Wahlperioden in dieser Körperschaft. Vgl. Objektlisten. Typ: Liste von oparl:LegislativeTerm Objekten. Kardinalität: 0 bis *.",
                     "items": {
                         "type": "string",
                         "description": "Bsp: https://oparl.example.org/body/0/terms/1"
                     }
-                }
+                },
                 "classification": {
                     "type": "string",
                     "description": "Art der Körperschaft. Typ: String oder URLs eines skos:Concept Objekts (vgl. Vokabulare zur Klassifizierung). Kardinalität: 0 bis 1."
-                }
+                },
                 "keyword": {
-                    "type": "string",
-                    "description": "Schlagworte. Typ: Array von Strings oder URLs zu skos:Concept Objekten (vgl. Vokabulare zur Klassifizierung). Kardinalität: 0 bis *. Bsp.: Kreisfreie Stadt"
-                }
+                    "type": "array",
+                    "description": "Schlagworte. Typ: Array von Strings oder URLs zu skos:Concept Objekten (vgl. Vokabulare zur Klassifizierung). Kardinalität: 0 bis *. Bsp.: Kreisfreie Stadt",
+                    "items": {
+                        "type": "string",
+                        "description": "Bsp: https://oparl.example.org/body/0/terms/1"
+                    }
+                },
                 "created": {
                     "type": "string",
                     "description": "Datum/Uhrzeit der Erzeugung des Objekts. Typ: xsd:dateTime. Kardinalität: 0 bis 1. Bsp.: 2014-01-08T14:28:31.568+01:00"
-                }
+                },
                 "modified": {
                     "type": "string",
                     "description": "Datum/Uhrzeit der letzten Bearbeitung des Objekts. Typ: xsd:dateTime. Kardinalität: 0 bis 1. Bsp.: 2014-01-08T14:28:31.568+01:00"
